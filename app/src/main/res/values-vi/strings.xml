@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_require_permission">Cần quyền truy cập vào bộ nhớ để ứng dụng hoạt động chính xác</string>
+    <string name="grant_permission">Cấp quyền</string>
+    <string name="get_file_manager">Tải ứng dụng</string>
+    <string name="text_require_file_manager">Cần có công cụ này để duyệt đường dẫn file một cách đơn giản</string>
+    <string name="permission_granted">Đã cấp quyền</string>
+    <string name="permission_denied">Từ chối cấp quyền</string>
+    <string name="open_in_setting_ntf">Bật thủ công trong cài đặt</string>
+    <string name="open_setting">"Mở cài đặt "</string>
+    <string name="app_installed_ntf">Ứng dụng đã được cài đặt</string>
+    <string name="downloading_ntf">"Đang tải xuống "</string>
+    <string name="require_perm_info">Ứng dụng cần quyền truy cập bộ nhớ, hãy cấp phép!</string>
+    <string name="require_perm_title">Yêu cầu quyền</string>
+    <string name="ok_btn">Đồng ý</string>
+    <string name="cancel_btn">Hủy</string>
+</resources>
