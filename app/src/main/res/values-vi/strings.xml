@@ -14,4 +14,22 @@
     <string name="require_perm_title">Yêu cầu quyền</string>
     <string name="ok_btn">Đồng ý</string>
     <string name="cancel_btn">Hủy</string>
+    <string name="save_log_ntf">Lưu nhật ký</string>
+    <string name="refuse_ntf">Thoát</string>
+    <string name="toast_save_log">Nhật ký đã lưu vào %s</string>
+    <string name="invaild_path">Đường dẫn không hợp lệ</string>
+    <string name="log_canceled">Người dùng bỏ lưu</string>
+    <string name="log_title">PIDC: Nhật ký</string>
+    <string name="path_filled">Đã cập nhật đường dẫn</string>
+    <string name="start_find_ntf">Bắt đầu tìm kiếm</string>
+    <string name="find_done">Đã tìm kiếm xong</string>
+    <string name="start_convert_ntf">Bắt đầu tìm kiếm và chuyển đổi</string>
+    <string name="convert_done">Chuyển đổi hoàn tất</string>
+    <string name="converting">Đang chuyển đổi...</string>
+    <string name="finding">Đang tìm kiếm...</string>
+    <string name="src_public_path">Đường dẫn tới Source Public.xml</string>
+    <string name="port_public_path">Đường dẫn tới Port Public.xml</string>
+    <string name="smali_path">Đường dẫn tới thư mục Smali</string>
+    <string name="start_convert">Chuyển đổi</string>
+    <string name="start_find">Chỉ tìm kiếm</string>
 </resources>

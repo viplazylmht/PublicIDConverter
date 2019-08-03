@@ -3,7 +3,8 @@
     <item android:drawable="@android:color/white"/>
 
     <item>
-        <bitmap android:src="@drawable/ic_icon_ntf"
+        <bitmap
+            android:src="@drawable/ic_splash_screen"
             android:gravity="center"
             />
     </item>

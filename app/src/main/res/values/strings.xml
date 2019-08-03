@@ -17,4 +17,24 @@
 
     <string name="ok_btn">OK</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="save_log_ntf">Save logs</string>
+    <string name="refuse_ntf">I got it</string>
+    <string name="toast_save_log">Log saved to %s</string>
+    <string name="log_title">PIDC: Message LOG</string>
+    <string name="log_canceled">Don\'t save, user cancel</string>
+    <string name="path_filled">Path Filled</string>
+    <string name="invaild_path">Invaild path</string>
+    <string name="start_find_ntf">Start find</string>
+    <string name="find_done">FIND DONE</string>
+    <string name="start_convert_ntf">Start find and convert</string>
+    <string name="convert_done">Convert done</string>
+    <string name="converting">Converting...</string>
+    <string name="save_new_data" translatable="false">Save data to new Directory</string>
+    <string name="save_data_to_dir" translatable="false">Save new data...</string>
+    <string name="finding">Finding...</string>
+    <string name="src_public_path">Path to source public.xml</string>
+    <string name="port_public_path">Path to Port Public.xml</string>
+    <string name="smali_path">Path to Smali Directory</string>
+    <string name="start_convert">Start Convert</string>
+    <string name="start_find">"Find ID only "</string>
 </resources>

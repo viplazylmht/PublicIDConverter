@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int PICK_SOURCE_PUBLIC = 1;
     private static final int PICK_PORT_PUBLIC = 2;
     private static final int PICK_SMALI_DIR = 3;
+    public static final int FIND_ID_ONLY = 10;
+    public static final int FIND_ID_AND_CONVERT = 11;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         tvSrcPublic = findViewById(R.id.tvSrcPublic);
         tvPortPublic = findViewById(R.id.tvPortPublic);
         tvSmaliDir = findViewById(R.id.tvSmaliDir);
-        tvOutput = findViewById(R.id.tv_output);
 
         btnSrcPublic = findViewById(R.id.btnSrcPublic);
         btnPortPublic = findViewById(R.id.btnPortPublic);
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_show);
-        dialog.setTitle("PIDC: Message LOG");
+        dialog.setTitle(getResources().getString(R.string.log_title));
 
         tvDialog = dialog.findViewById(R.id.tvDialog);
         btnSave = dialog.findViewById(R.id.btnSave);
@@ -53,25 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
         toolbox = new Converter(MainActivity.this);
         toolbox.setProgressDialog(progressDialog);
+        toolbox.setDialog(dialog);
+
         btnSrcPublic.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent("org.openintents.action.PICK_FILE");
                 startActivityForResult(intent, PICK_SOURCE_PUBLIC);
-            }
-        });
-        btnSave.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            toolbox.saveLog(tvDialog.getText().toString());
-            dialog.dismiss();
-            }
-        });
-        btnReturn.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toolbox.msg("Don't save, user cancel");
-                dialog.dismiss();
             }
         });
         btnPortPublic.setOnClickListener(new Button.OnClickListener() {
@@ -88,11 +79,31 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, PICK_SMALI_DIR);
             }
         });
+        btnSave.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toolbox.saveLog(tvDialog.getText().toString());
+                dialog.dismiss();
+            }
+        });
+        btnReturn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //toolbox.msg(getResources().getString(R.string.log_canceled));
+                dialog.dismiss();
+                toolbox.showSnackbar(getResources().getString(R.string.log_canceled), 2000);
+            }
+        });
         btnFind.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 start_find();
+            }
+        });
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start_convert();
             }
         });
     }
@@ -103,42 +114,66 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case PICK_SOURCE_PUBLIC:
                 tvSrcPublic.setText(dataPath);
+                toolbox.showSnackbar(getResources().getString(R.string.path_filled), 1500);
                 break;
             case PICK_PORT_PUBLIC:
                 tvPortPublic.setText(dataPath);
+                toolbox.showSnackbar(getResources().getString(R.string.path_filled), 1500);
                 break;
             case PICK_SMALI_DIR:
                 tvSmaliDir.setText(dataPath);
+                toolbox.showSnackbar(getResources().getString(R.string.path_filled), 1500);
                 break;
-
                 default: break;
-
-
         }
     }
-    protected boolean checkExist(String... args){
-        for (String arg : args){
-            File f = new File(arg);
-            if (!f.exists()) return false;
-        }
-        return true;
+
+    protected boolean checkVailPath(String srcPublic, String smaliDir) {
+        if (srcPublic == null || smaliDir == null) return false;
+        boolean done;
+        done = srcPublic.endsWith(".xml") && new File(srcPublic).exists();
+        done &= new File(smaliDir).isDirectory();
+        return done;
     }
 
-
+    protected boolean checkVailPath(String srcPublic, String portPublic, String smaliDir) {
+        if (portPublic == null) return false;
+        boolean done = checkVailPath(srcPublic, smaliDir);
+        done &= portPublic.endsWith(".xml") && new File(portPublic).exists();
+        return done;
+    }
     protected void start_find(){
         String srcPublic = tvSrcPublic.getText().toString();
         String portPublic = tvPortPublic.getText().toString();
         String smaliDir = tvSmaliDir.getText().toString();
 
-        if (!checkExist(srcPublic, smaliDir)) return;
-
-        toolbox.setSrcPublic(srcPublic);
-        toolbox.setPortPublic(portPublic);
-        toolbox.setDIR_NAME(toolbox.generateDIR_NAME(smaliDir));
-
-        toolbox.findIDs(smaliDir);
-        tvDialog.setText(toolbox.getResult());
-        dialog.show();
+        if (!checkVailPath(srcPublic, smaliDir)) {
+            toolbox.showSnackbar(getResources().getString(R.string.invaild_path), 2500);
+            return;
+        }
+        toolbox.setData(srcPublic, portPublic, smaliDir);
+        toolbox.showSnackbar(getResources().getString(R.string.start_find_ntf), 2000);
+        toolbox.findIDs(FIND_ID_ONLY);
     }
 
+    protected void start_convert() {
+        String srcPublic = tvSrcPublic.getText().toString();
+        String portPublic = tvPortPublic.getText().toString();
+        String smaliDir = tvSmaliDir.getText().toString();
+
+        if (!checkVailPath(srcPublic, portPublic, smaliDir)) {
+            toolbox.showSnackbar(getResources().getString(R.string.invaild_path), 2500);
+            return;
+        }
+        toolbox.setData(srcPublic, portPublic, smaliDir);
+        toolbox.showSnackbar(getResources().getString(R.string.start_convert_ntf), 2000);
+        toolbox.findIDs(FIND_ID_AND_CONVERT);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dialog.dismiss();
+        toolbox.ProgressDismiss();
+    }
 }
