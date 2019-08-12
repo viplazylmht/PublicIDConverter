@@ -3,9 +3,9 @@
 
     <string name="text_require_permission">The storage is needed for using this tool</string>
     <string name="grant_permission">Grant Permission</string>
-    <string name="get_file_manager">Download OL File Manager</string>
+    <string name="get_file_manager">Download OI File Manager</string>
     <string name="text_require_file_manager">This tool is needed for getting data to use this tool</string>
-    <string name="text_name_file_manager" translatable="false">OL FILE MANAGER</string>
+    <string name="text_name_file_manager" translatable="false">OI FILE MANAGER</string>
     <string name="permission_granted">Permission GRANTED</string>
     <string name="permission_denied">Permission DENIED</string>
     <string name="open_in_setting_ntf">Enable manually in setting</string>
