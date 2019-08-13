@@ -30,12 +30,22 @@ For more about _OI File Manager_, visit http://www.openintents.org/filemanager/
 
 - Make sure you have enough free space memory on **Internal Storage**
 
-- Get **Source Public** from guilde port
+- Get **Source Public** from guide port
 
 - Decomplie your apk that will be port
 
-- Follow guilde port, add resources, recomplie, decomplie again to get **Port Public**
+- Follow guide port, add resources, recomplie, decomplie again to get **Port Public**
 
-- Parsing **smali Directory** from guilde as **SMALI DIR**, do not use smali from your apk because it may be _very **big**_.
+- Parsing **smali Directory** from guide as **SMALI DIR**, do not use smali from your apk because it may be _very **big**_.
   
 - Enter **Find IDs** and see the Log
+
+- Compare Log with guide to make sure that will be correct.
+
+- Enter **Convert** and checkout Log again 
+
+- **Smali-NEW** may be output to _/sdcard/PublicIDConverter/$DATE-TIME/_ but you can see full path in Log too.
+
+- If this tool convert _more/less_ than you need, or incorrect, just go to **Smali-NEW** and fix normally.
+
+- Put **Smali-NEW** to _apk smali directory_ and recomplie, sign, done.
