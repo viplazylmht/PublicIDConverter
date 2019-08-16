@@ -1,0 +1,73 @@
+<h1>Public ID Converter</h1>
+<hr />
+<h2 id="project_tagline">Public ID Converter is a tool for Android that can convert ids when porting/modifing apk.</h2>
+<p>&nbsp;</p>
+<h1 id="public-id-converter">Public ID Converter</h1>
+<p>This is a tool for Android that can convert public IDs when porting smali files.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>
+<p><strong>Search</strong>&nbsp;all smali files on a smali directory for all IDs contained in smali files</p>
+</li>
+<li>
+<p><strong>Convert</strong>&nbsp;all IDs within smali files to new IDs</p>
+</li>
+<li>
+<p>Implement guilde port (for convert smali step)</p>
+</li>
+</ul>
+<h2 id="first-initializing">First initializing</h2>
+<ul>
+<li>
+<p>Give&nbsp;<em>storage</em>&nbsp;permission</p>
+</li>
+<li>
+<p>This tool use&nbsp;<em>OI File Manager</em>&nbsp;as&nbsp;<strong>file picker</strong>, if device have problem with in-app install, please install this file manager normally.</p>
+</li>
+</ul>
+<p>For more about&nbsp;<em>OI File Manager</em>, visit http://www.openintents.org/filemanager/</p>
+<h2 id="how-to-use">How to use</h2>
+<ul>
+<li>
+<p>Make sure you have enough free space memory on&nbsp;<strong>Internal Storage</strong></p>
+</li>
+<li>
+<p>Get&nbsp;<strong>Source Public</strong>&nbsp;from guide port</p>
+</li>
+<li>
+<p>Decompile your apk that will be port</p>
+</li>
+<li>
+<p>Follow guide port, add resources, recompile, decompile again to get&nbsp;<strong>Port Public</strong></p>
+</li>
+<li>
+<p>Parsing&nbsp;<strong>smali Directory</strong>&nbsp;from guide as&nbsp;<strong>SMALI DIR</strong>, do not use smali from your apk because it may be&nbsp;<em>very&nbsp;<strong>big</strong></em>.</p>
+</li>
+<li>
+<p>Enter&nbsp;<strong>Find IDs</strong>&nbsp;and see the Log</p>
+</li>
+<li>
+<p>Compare Log with guide to make sure that will be correct.</p>
+</li>
+<li>
+<p>Enter&nbsp;<strong>Convert</strong>&nbsp;and checkout Log again</p>
+</li>
+<li>
+<p><strong>Smali-NEW</strong>&nbsp;may be output to&nbsp;<em>/sdcard/PublicIDConverter/$DATE-TIME/</em>&nbsp;but you can see full path in Log too.</p>
+</li>
+<li>
+<p>If this tool convert&nbsp;<em>more/less</em>&nbsp;than you need, or incorrect, just go to&nbsp;<strong>Smali-NEW</strong>&nbsp;and fix normally.</p>
+</li>
+<li>
+<p>Put&nbsp;<strong>Smali-NEW</strong>&nbsp;to&nbsp;<em>apk smali directory</em>&nbsp;and recompile, sign, done.</p>
+</li>
+</ul>
+<h2>Notes:</h2>
+<ul>
+<li>
+<p><strong>Source Public</strong>&nbsp;and&nbsp;<strong>smali Directory</strong>&nbsp;are enough to use&nbsp;<strong>Find IDs</strong>&nbsp;function.</p>
+</li>
+<li>
+<p>If you want to create guide port (for convert smali step), just save and modify the Log after converted smali.</p>
+</li>
+</ul>
