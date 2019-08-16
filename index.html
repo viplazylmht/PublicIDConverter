@@ -1,73 +1,136 @@
-<h1>Public ID Converter</h1>
-<hr />
-<h2 id="project_tagline">Public ID Converter is a tool for Android that can convert ids when porting/modifing apk.</h2>
-<p>&nbsp;</p>
-<h1 id="public-id-converter">Public ID Converter</h1>
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Public ID Converter | PublicIDConverter</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Public ID Converter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Public ID Converter is a tool for Android that can convert ids when porting/modifing apk." />
+<meta property="og:description" content="Public ID Converter is a tool for Android that can convert ids when porting/modifing apk." />
+<link rel="canonical" href="https://viplazylmht.github.io/PublicIDConverter/" />
+<meta property="og:url" content="https://viplazylmht.github.io/PublicIDConverter/" />
+<meta property="og:site_name" content="PublicIDConverter" />
+<script type="application/ld+json">
+{"headline":"Public ID Converter","@type":"WebSite","url":"https://viplazylmht.github.io/PublicIDConverter/","name":"PublicIDConverter","description":"Public ID Converter is a tool for Android that can convert ids when porting/modifing apk.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/viplazylmht/PublicIDConverter">View project on GitHub</a>
+
+          <h1 id="project_title">Public ID Converter</h1>
+          <h2 id="project_tagline">Public ID Converter is a tool for Android that can convert IDs when porting/modifing apk.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="public-id-converter">Public ID Converter</h1>
+
 <p>This is a tool for Android that can convert public IDs when porting smali files.</p>
+
 <h2 id="features">Features</h2>
+
 <ul>
-<li>
-<p><strong>Search</strong>&nbsp;all smali files on a smali directory for all IDs contained in smali files</p>
-</li>
-<li>
-<p><strong>Convert</strong>&nbsp;all IDs within smali files to new IDs</p>
-</li>
-<li>
-<p>Implement guilde port (for convert smali step)</p>
-</li>
+  <li>
+    <p><strong>Search</strong> all smali files on a smali directory for all IDs contained in smali files.</p>
+  </li>
+  <li>
+    <p><strong>Convert</strong> all IDs within smali files to new IDs.</p>
+  </li>
+  <li>
+    <p>Implement guide port (for convert smali step).</p>
+  </li>
 </ul>
+
 <h2 id="first-initializing">First initializing</h2>
+
 <ul>
-<li>
-<p>Give&nbsp;<em>storage</em>&nbsp;permission</p>
-</li>
-<li>
-<p>This tool use&nbsp;<em>OI File Manager</em>&nbsp;as&nbsp;<strong>file picker</strong>, if device have problem with in-app install, please install this file manager normally.</p>
-</li>
+  <li>
+    <p>Give <em>storage</em> permission.</p>
+  </li>
+  <li>
+    <p>This tool use <em>OI File Manager</em> as <strong>file picker</strong>, if device have problem with in-app install, please install this file manager normally.</p>
+  </li>
 </ul>
-<p>For more about&nbsp;<em>OI File Manager</em>, visit http://www.openintents.org/filemanager/</p>
+
+<p>For more about <em>OI File Manager</em>, visit <a href="http://www.openintents.org/filemanager/" target="_blank" rel="noopener">here</a>.</p>
+
 <h2 id="how-to-use">How to use</h2>
+
 <ul>
-<li>
-<p>Make sure you have enough free space memory on&nbsp;<strong>Internal Storage</strong></p>
-</li>
-<li>
-<p>Get&nbsp;<strong>Source Public</strong>&nbsp;from guide port</p>
-</li>
-<li>
-<p>Decompile your apk that will be port</p>
-</li>
-<li>
-<p>Follow guide port, add resources, recompile, decompile again to get&nbsp;<strong>Port Public</strong></p>
-</li>
-<li>
-<p>Parsing&nbsp;<strong>smali Directory</strong>&nbsp;from guide as&nbsp;<strong>SMALI DIR</strong>, do not use smali from your apk because it may be&nbsp;<em>very&nbsp;<strong>big</strong></em>.</p>
-</li>
-<li>
-<p>Enter&nbsp;<strong>Find IDs</strong>&nbsp;and see the Log</p>
-</li>
-<li>
-<p>Compare Log with guide to make sure that will be correct.</p>
-</li>
-<li>
-<p>Enter&nbsp;<strong>Convert</strong>&nbsp;and checkout Log again</p>
-</li>
-<li>
-<p><strong>Smali-NEW</strong>&nbsp;may be output to&nbsp;<em>/sdcard/PublicIDConverter/$DATE-TIME/</em>&nbsp;but you can see full path in Log too.</p>
-</li>
-<li>
-<p>If this tool convert&nbsp;<em>more/less</em>&nbsp;than you need, or incorrect, just go to&nbsp;<strong>Smali-NEW</strong>&nbsp;and fix normally.</p>
-</li>
-<li>
-<p>Put&nbsp;<strong>Smali-NEW</strong>&nbsp;to&nbsp;<em>apk smali directory</em>&nbsp;and recompile, sign, done.</p>
-</li>
+  <li>
+    <p>Make sure you have enough free space memory on <strong>Internal Storage</strong>.</p>
+  </li>
+  <li>
+    <p>Get <strong>Source Public</strong> from guide port.</p>
+  </li>
+  <li>
+    <p>Decompile your apk that will be port.</p>
+  </li>
+  <li>
+    <p>Follow guide port, add resources, recompile, decompile again to get <strong>Port Public</strong>.</p>
+  </li>
+  <li>
+    <p>Parsing <strong>smali Directory</strong> from guide as <strong>SMALI DIR</strong>, do not use smali from your apk because it may be <em>very <strong>big</strong></em>.</p>
+  </li>
+  <li>
+    <p>Enter <strong>Find IDs</strong> function and see the Log.</p>
+  </li>
+  <li>
+    <p>Compare Log with guide to make sure that will be correct.</p>
+  </li>
+  <li>
+    <p>Enter <strong>Convert</strong> function and checkout Log again .</p>
+  </li>
+  <li>
+    <p><strong>Smali-NEW</strong> may be output to <em>/sdcard/PublicIDConverter/$DATE-TIME/</em> but you can see full path in Log too.</p>
+  </li>
+  <li>
+    <p>If this tool convert <em>more/less</em> than you need, or incorrect, just go to <strong>Smali-NEW</strong> and fix normally.</p>
+  </li>
+  <li>
+    <p>Put <strong>Smali-NEW</strong> to <em>apk smali directory</em> and recompile, sign, done.</p>
+  </li>
 </ul>
-<h2>Notes:</h2>
+
+<h2 id="notes">Notes:</h2>
+
 <ul>
-<li>
-<p><strong>Source Public</strong>&nbsp;and&nbsp;<strong>smali Directory</strong>&nbsp;are enough to use&nbsp;<strong>Find IDs</strong>&nbsp;function.</p>
-</li>
-<li>
-<p>If you want to create guide port (for convert smali step), just save and modify the Log after converted smali.</p>
-</li>
+  <li>
+    <p><strong>Source Public</strong> and <strong>smali Directory</strong> are enough to use <strong>Find IDs</strong> function.</p>
+  </li>
+  <li>
+    <p>If you want to create guide port (for convert smali step), just save and modify the Log after converted smali.</p>
+  </li>
 </ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">PublicIDConverter maintained by <a href="https://github.com/viplazylmht">viplazylmht</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
